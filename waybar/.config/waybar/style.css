@@ -1,0 +1,131 @@
+@import "mocha.css";
+
+* {
+  font-family: "Cantarell";
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+#waybar {
+  background-color: transparent;
+  color: @text;
+}
+
+#workspaces button {
+  color: @lavender;
+  background: @surface0;
+  border-radius: 0px;
+  margin: 8px 0px 8px 0px;
+}
+
+#workspaces button:first-child {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding-left: 20px;
+}
+
+#workspaces button:last-child {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding-right: 25px;
+}
+
+#workspaces button.active {
+  color: @mauve;
+}
+
+#workspace button:hover {
+}
+
+#custom-launcher,
+#clock,
+#battery,
+#cpu,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-dunst,
+#custom-powermenu{
+  padding: 0px 20px;
+  margin: 8px 0px 8px 0px;
+  /*border-radius: 20px;*/
+  color: @crust;
+}
+
+
+#custom-launcher {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 0px 25px 0px 20px;
+  margin: 8px 0px 8px 20px;
+  background-color: @surface0;
+  color: @mauve;
+}
+
+#cpu {
+  background-color: @surface0;
+  color: @lavender;
+}
+
+#temperature {
+  color: @blue;
+  background-color: @surface0;
+}
+
+#backlight {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  color: @sapphire;
+  background-color: @surface0;
+}
+
+#pulseaudio {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 0px 20px 0px 25px;
+  background-color: @surface0;
+  color: @teal;
+}
+
+#network {
+  padding: 0px 20px 0px 25px;
+  background-color: @surface0;
+  color: @green;
+}
+
+#battery {
+  color: @yellow;
+  background-color: @surface0;
+}
+
+#clock {
+  color: @peach;
+  background-color: @surface0;
+}
+
+#custom-powermenu {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 0px 25px 0px 20px;
+  margin: 9px 20px 8px 0px;
+  color: @maroon;
+  background-color: @surface0;
+}
+
+@keyframes blink {
+  to {
+    background-color: @red;
+    color: @mantle;
+  }
+}
+
+#battery.critical:not(.charging) {
+  color: @red;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
