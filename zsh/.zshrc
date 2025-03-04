@@ -23,5 +23,8 @@ zinit ice as"command" from"gh-r" \
           atpull"%atclone" src"init.zsh"
 zinit light starship/starship
 
-fastfetch
-
+if [[ $TERM == "xterm-kitty" ]]; then
+    fastfetch
+else
+    fastfetch --logo-type chafa
+fi
