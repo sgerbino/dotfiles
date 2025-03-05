@@ -52,7 +52,7 @@
 @define-color	crust-rgb  rgb(17, 17, 27);
 
 * {
-  font-family: 'Cantarell';
+  font-family: 'Noto Sans';
   font-size: 1.25rem;
   font-weight: 500;
 }
