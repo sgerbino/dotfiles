@@ -1,6 +1,7 @@
 [global]
 monitor = 0
 corner_radius = 20
+width = (300, 1000)
 follow = mouse
 origin = top-right
 offset = 20x20
