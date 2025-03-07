@@ -1,5 +1,8 @@
 # Dotfiles
 
+It is recommended to clone the repository into `~/.dotfiles`.
+Before runnning `setup.sh` ensure that you have the `stow` installed on your system. Running `setup.sh` will create symbolic links from the repository to the correct configuration locations.
+
 ## Arch Linux
 
 ### Secure boot
