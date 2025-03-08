@@ -1,7 +1,7 @@
 # Dotfiles
 
 It is recommended to clone the repository into `~/.dotfiles`.
-Before runnning `setup.sh` ensure that you have the `stow` installed on your system. Running `setup.sh` will create symbolic links from the repository to the correct configuration locations.
+Before runnning `setup.sh` ensure that you have `stow` installed on your system. Running `setup.sh` will create symbolic links from the repository to the correct configuration locations.
 
 ## LLMs
 [Dockerized Ollama](https://ollama.com/blog/ollama-is-now-available-as-an-official-docker-image)
