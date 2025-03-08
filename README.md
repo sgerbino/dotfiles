@@ -3,6 +3,21 @@
 It is recommended to clone the repository into `~/.dotfiles`.
 Before runnning `setup.sh` ensure that you have the `stow` installed on your system. Running `setup.sh` will create symbolic links from the repository to the correct configuration locations.
 
+## LLMs
+[Dockerized Ollama](https://ollama.com/blog/ollama-is-now-available-as-an-official-docker-image)
+
+This configuration makes use of AI to enhance tooling. It is integrated in both `neovim` and `sc`. Both applications expect you to have `ollama` listening on its default port. If you have an NVIDIA GPU, ensure that you have the `nvidia-container-toolkit` available for GPU acceleration inside containers.
+
+Use the following command to pull down `ollama`.
+```console
+docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+```
+
+Update the container to restart unless stopped so the service is always available.
+```console
+docker update --restart=unless-stopped ollama
+```
+
 ## Arch Linux
 
 ### Secure boot
