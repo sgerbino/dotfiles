@@ -26,6 +26,8 @@ zinit light starship/starship
 source ~/.config/fzf/fzf.zsh
 
 export EDITOR=nvim
+export CC=clang
+export CXX=clang++
 
 if [[ $TERM == "xterm-kitty" ]]; then
     fastfetch
