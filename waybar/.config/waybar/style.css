@@ -15,7 +15,7 @@
   color: @lavender;
   background: @surface0;
   border-radius: 0px;
-  margin: 8px 0px 8px 0px;
+  margin: 10px 0px 5px 0px;
 }
 
 #workspaces button:first-child {
@@ -48,7 +48,7 @@
 #custom-dunst,
 #custom-powermenu{
   padding: 0px 20px;
-  margin: 8px 0px 8px 0px;
+  margin: 10px 0px 5px 0px;
   /*border-radius: 20px;*/
   color: @crust;
 }
@@ -58,7 +58,7 @@
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   padding: 0px 25px 0px 20px;
-  margin: 8px 0px 8px 20px;
+  margin: 10px 0px 5px 20px;
   background-color: @surface0;
   color: @mauve;
 }
@@ -108,7 +108,7 @@
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   padding: 0px 25px 0px 20px;
-  margin: 8px 20px 8px 0px;
+  margin: 10px 20px 5px 0px;
   color: @maroon;
   background-color: @surface0;
 }
