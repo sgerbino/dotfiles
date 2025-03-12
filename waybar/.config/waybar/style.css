@@ -16,6 +16,7 @@
   background: @surface0;
   border-radius: 0px;
   margin: 10px 0px 5px 0px;
+  padding-right: 15px;
 }
 
 #workspaces button:first-child {
@@ -34,7 +35,16 @@
   color: @text;
 }
 
-#workspace button:hover {
+#workspaces button.urgent {
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#workspaces button:hover {
+  border-color: @surface0;
 }
 
 #custom-launcher,
@@ -118,13 +128,6 @@
   background-color: @surface0;
 }
 
-@keyframes blink {
-  to {
-    background-color: @red;
-    color: @mantle;
-  }
-}
-
 #battery.critical:not(.charging) {
   color: @red;
   animation-name: blink;
@@ -132,5 +135,11 @@
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+}
+
+@keyframes blink {
+  to {
+    color: @surface0;
+  }
 }
 
