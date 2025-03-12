@@ -1,6 +1,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.nerd_font = true
+vim.opt.colorcolumn = '120'
 
 require 'options'
 require 'keymaps'
