@@ -3,6 +3,75 @@
 It is recommended to clone the repository into `~/.dotfiles`.
 Before runnning `setup.sh` ensure that you have `stow` installed on your system. Running `setup.sh` will create symbolic links from the repository to the correct configuration locations.
 
+## Yubikey
+
+After going through the setup process, or using a Yubikey to a freshly setup machine, there are several steps to take in order to utilize its features.
+This particular set of instructions assume you use OpenPGP and SSH keys stored on your Yubikey, as well as use OTP for 2FA.
+
+### SSH
+
+In order for SSH to recognize your SSH keys, add it with the following command.
+```console
+ssh-add -K
+```
+
+To retrieve your public SSH key in order to add it to another machine or service like GitHub, use this command.
+```console
+ssh-add -L
+```
+
+### GPG
+
+Yubikey GPG will install a private key stub that lets GPG know to ask the Yubikey when trying to sign for a particular key pair.
+
+If you already have the associated public key in your keyring, execute this command to have the Yubikey install the private stub.
+```console
+gpg --card-status
+```
+
+A far easier strategy is to save the URL pointing to the public key on the smartcard itself. You can setup by performing the following action.
+```console
+gpg --edit-card
+```
+
+At the prompt, execute the `fetch` command. This will grab the public key from the URL and install the private key stub in one step.
+```
+Reader ...........: 0000:0000:X:0
+Application ID ...: ABCDEF
+Application type .: OpenPGP
+Version ..........: 3.4
+Manufacturer .....: Yubico
+Serial number ....: 
+Name of cardholder: [not set]
+Language prefs ...: [not set]
+Salutation .......: 
+URL of public key : https://github.com/{USERNAME}.gpg
+Login data .......: [not set]
+Signature PIN ....: not forced
+Key attributes ...: rsa4096 rsa4096 rsa4096
+Max. PIN lengths .: 127 127 127
+PIN retry counter : 3 0 3
+Signature counter : 856
+KDF setting ......: off
+UIF setting ......: Sign=off Decrypt=off Auth=off
+Signature key ....: ABCD EFGH IJKL MNOP QRST  UVWX YZ01 2345 5678 9ABC
+      created ....: 1970-01-01 00:00:00
+Encryption key....: ABCD EFGH IJKL MNOP QRST  UVWX YZ01 2345 5678 9ABC
+      created ....: 1970-01-01 00:00:00
+Authentication key: ABCD EFGH IJKL MNOP QRST  UVWX YZ01 2345 5678 9ABC
+      created ....: 1970-01-01 00:00:00
+General key info..: 
+pub  rsa4096/ABCDEFGHIJKLMNOP 1970-01-01 {NAME} <{EMAIL}>
+sec>  rsa4096/ABCDEFGHIJKLMNOP  created: 1970-01-01  expires: never     
+                                card-no: ABCDEF
+ssb>  rsa4096/ABCDEFGHIJKLMNOP  created: 1970-01-01  expires: never     
+                                card-no: ABCDEF
+ssb>  rsa4096/ABCDEFGHIJKLMNOP  created: 1970-01-01  expires: never     
+                                card-no: ABCDEF
+
+gpg/card> fetch
+```
+
 ## LLMs
 [Dockerized Ollama](https://ollama.com/blog/ollama-is-now-available-as-an-official-docker-image)
 
