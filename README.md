@@ -9,7 +9,7 @@ Using the configuration provided by this repository is accomplished through usin
 When using the `smartcard reload` utility, your signing key is updated with `git`, by using the `[include]` strategy it does not modify any version controlled files.
 
 Add the following to your `~/.gitconfig`.
-```txt
+```
 [include]
 	path = ~/.config/git/gitconfig
 ```
