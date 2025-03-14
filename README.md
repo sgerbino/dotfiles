@@ -72,6 +72,15 @@ ssb>  rsa4096/ABCDEFGHIJKLMNOP  created: 1970-01-01  expires: never
 gpg/card> fetch
 ```
 
+### Swapping Yubikeys
+
+When swapping smart cards a utility function is defined in `zsh`. It will allow the `gpg-agent` to recognize the new smartcard as well as inform `git` of the new OpenPGP key to sign with.
+
+After switching your Yubikey use the following command.
+```console
+smartcard-reload
+```
+
 ## LLMs
 [Dockerized Ollama](https://ollama.com/blog/ollama-is-now-available-as-an-official-docker-image)
 
