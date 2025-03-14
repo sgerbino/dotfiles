@@ -3,6 +3,17 @@
 It is recommended to clone the repository into `~/.dotfiles`.
 Before runnning `setup.sh` ensure that you have `stow` installed on your system. Running `setup.sh` will create symbolic links from the repository to the correct configuration locations.
 
+## Git
+
+Using the configuration provided by this repository is accomplished through using `[include]` in `~/.gitconfig`.
+When using the `smartcard reload` utility, your signing key is updated with `git`, by using the `[include]` strategy it does not modify any version controlled files.
+
+Add the following to your `~/.gitconfig`.
+```txt
+[include]
+	path = ~/.config/git/gitconfig
+```
+
 ## Yubikey
 
 After going through the setup process, or using a Yubikey to a freshly setup machine, there are several steps to take in order to utilize its features.
