@@ -1,6 +1,6 @@
 # Dotfiles
 
-It is recommended to clone the repository into `~/.dotfiles`.
+This project makes use of git submodules. It is recommended to clone it recursively.
 Before runnning `setup.sh` ensure that you have `stow` installed on your system. Running `setup.sh` will create symbolic links from the repository to the correct configuration locations.
 
 ## Git
