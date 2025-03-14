@@ -2,11 +2,32 @@ export GPG_TTY=$(tty)
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpg-connect-agent updatestartuptty /bye > /dev/null
 
-function smartcard_pubkey() {
-  echo $(gpg --card-status | grep 'General key info' | awk -F'/' '{print $2}' | sed 's/ .*//')
+function smartcard() {
+    local retval=0
+    case $1 in
+        'reload')
+            local key
+            key=$(smartcard key) && \
+                gpg-connect-agent "scd serialno" "learn --force" /bye && \
+                git config --global user.signingkey $key
+            retval=$?
+            ;;
+        'key')
+            local key
+            key=$(gpg --card-status) && \
+                key=$(echo $key | grep 'General key info') && \
+                key=$(echo $key | awk -F'/' '{print $2}') && \
+                key=$(echo $key | sed 's/ .*//') && \
+                echo $key
+            retval=$?
+            ;;
+        *)
+            echo "invalid argument:" $1
+            retval=1
+            ;;
+        esac
+    return retval
 }
-
-alias smartcard-reload='gpg-connect-agent "scd serialno" "learn --force" /bye && git config --global user.signingkey $(smartcard_pubkey)'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

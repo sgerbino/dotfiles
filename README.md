@@ -78,7 +78,7 @@ When swapping smart cards a utility function is defined in `zsh`. It will allow 
 
 After switching your Yubikey use the following command.
 ```console
-smartcard-reload
+smartcard reload
 ```
 
 ## LLMs
