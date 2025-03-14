@@ -133,7 +133,7 @@ sbctl verify
 ```
 
 Example output:
-```console
+```
 Verifying file database and EFI images in /boot...
 ✓ /boot/EFI/BOOT/BOOTX64.EFI is signed
 ✓ /boot/EFI/Linux/arch-linux.efi is signed
@@ -164,14 +164,14 @@ Ensure you have the necessary package, `pacman -S tpm2-tss`.
 
 1. Create `/etc/crypttab.initramfs`, example:
 
-```conf
+```
 root UUID={UUID_HERE} luks,tries=3,tpm2-device=auto
 ```
 _Replace {UUID_HERE} with your encrypted drive UUID._
 
 2. Update `HOOKS` in `/etc/mkinitcpio.conf`, example:
 
-```conf
+```
 HOOKS=(base systemd autodetect microcode modconf kms keyboard sd-vconsole sd-encrypt block filesystems fsck)
 ```
 
