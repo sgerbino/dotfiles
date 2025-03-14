@@ -65,19 +65,19 @@ PIN retry counter : 3 0 3
 Signature counter : 856
 KDF setting ......: off
 UIF setting ......: Sign=off Decrypt=off Auth=off
-Signature key ....: ABCD EFGH IJKL MNOP QRST  UVWX YZ01 2345 5678 9ABC
+Signature key ....: 0123 4567 89AB CDEF 0123  4567 89AB CDEF 0123 4567
       created ....: 1970-01-01 00:00:00
-Encryption key....: ABCD EFGH IJKL MNOP QRST  UVWX YZ01 2345 5678 9ABC
+Encryption key....: 0123 4567 89AB CDEF 0123  4567 89AB CDEF 0123 4567
       created ....: 1970-01-01 00:00:00
-Authentication key: ABCD EFGH IJKL MNOP QRST  UVWX YZ01 2345 5678 9ABC
+Authentication key: 0123 4567 89AB CDEF 0123  4567 89AB CDEF 0123 4567
       created ....: 1970-01-01 00:00:00
 General key info..: 
-pub  rsa4096/ABCDEFGHIJKLMNOP 1970-01-01 {NAME} <{EMAIL}>
-sec>  rsa4096/ABCDEFGHIJKLMNOP  created: 1970-01-01  expires: never     
+pub  rsa4096/0123456789ABCDEF 1970-01-01 {NAME} <{EMAIL}>
+sec>  rsa4096/0123456789ABCDEF  created: 1970-01-01  expires: never     
                                 card-no: ABCDEF
-ssb>  rsa4096/ABCDEFGHIJKLMNOP  created: 1970-01-01  expires: never     
+ssb>  rsa4096/0123456789ABCDEF  created: 1970-01-01  expires: never     
                                 card-no: ABCDEF
-ssb>  rsa4096/ABCDEFGHIJKLMNOP  created: 1970-01-01  expires: never     
+ssb>  rsa4096/0123456789ABCDEF  created: 1970-01-01  expires: never     
                                 card-no: ABCDEF
 
 gpg/card> fetch
