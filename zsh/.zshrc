@@ -2,8 +2,11 @@ export GPG_TTY=$(tty)
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpg-connect-agent updatestartuptty /bye > /dev/null
 
-alias yubikey-refresh='gpg-connect-agent "scd serialno" "learn --force" /bye'
-alias pbcopy='xclip -selection clipboard'
+function smartcard_pubkey() {
+  echo $(gpg --card-status | grep 'General key info' | awk -F'/' '{print $2}' | sed 's/ .*//')
+}
+
+alias smartcard-reload='gpg-connect-agent "scd serialno" "learn --force" /bye && git config --global user.signingkey $(smartcard_pubkey)'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
