@@ -5,6 +5,15 @@ gpg-connect-agent updatestartuptty /bye > /dev/null
 function smartcard() {
     local retval=0
     case $1 in
+        'load')
+            local server
+            server=$(smartcard keyserver) && \
+                gpg --fetch-keys $server && \
+                gpg --card-status && \
+                ssh-add -K && \
+                smartcard reload
+            retval=$?
+            ;;
         'reload')
             local key
             key=$(smartcard key) && \
@@ -19,6 +28,14 @@ function smartcard() {
                 key=$(echo $key | awk -F'/' '{print $2}') && \
                 key=$(echo $key | sed 's/ .*//') && \
                 echo $key
+            retval=$?
+            ;;
+        'keyserver')
+            local server
+            server=$(gpg --card-status) && \
+                server=$(echo $server | grep 'URL of public key') && \
+                server=$(echo $server | awk -F': ' '{print $2}') && \
+                echo $server
             retval=$?
             ;;
         *)
