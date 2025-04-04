@@ -69,6 +69,9 @@ source ~/.config/fzf/fzf.zsh
 export EDITOR=nvim
 export CC=clang
 export CXX=clang++
+export CMAKE_CXX_COMPILER_LAUNCHER=ccache
+export CMAKE_C_COMPILER_LAUNCHER=ccache
+export CMAKE_EXPORT_COMPILE_COMMANDS=1
 
 if [[ $TERM == "xterm-kitty" ]]; then
     fastfetch
