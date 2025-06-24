@@ -107,6 +107,11 @@ Update the container to restart unless stopped so the service is always availabl
 docker update --restart=unless-stopped ollama
 ```
 
+Run commands on Dockerized ollama.
+```console
+docker exec -it ollama ollama help
+```
+
 ## Arch Linux
 
 ### Secure boot
