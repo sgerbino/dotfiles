@@ -5,9 +5,11 @@ return {
   version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
   opts = {
     provider = 'ollama',
-    auto_suggestions_provider = 'ollama',
-    ollama = {
-      model = 'qwen2.5-coder',
+    providers = {
+      ollama = {
+        model = 'qwen2.5-coder',
+        endpoint = 'http://127.0.0.1:11434',
+      },
     },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
