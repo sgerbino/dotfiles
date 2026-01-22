@@ -1,10 +1,11 @@
 return {
   'yetone/avante.nvim',
+  enabled = false,
   event = 'VeryLazy',
   lazy = true,
   version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
   opts = {
-    provider = 'ollama',
+    provider = 'claude-code',
     providers = {
       ollama = {
         model = 'qwen2.5-coder',

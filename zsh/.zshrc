@@ -46,7 +46,7 @@ function smartcard() {
     return retval
 }
 
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
@@ -74,8 +74,11 @@ export CMAKE_C_COMPILER_LAUNCHER=ccache
 export CMAKE_EXPORT_COMPILE_COMMANDS=1
 export CLICOLOR_FORCE=1
 
-if [[ $TERM == "xterm-kitty" ]]; then
-    fastfetch
-else
-    fastfetch --logo-type chafa
-fi
+export ENABLE_LSP_TOOL=1
+#if [[ $TERM == "xterm-kitty" ]]; then
+#    fastfetch
+#else
+#    fastfetch --logo-type chafa
+#fi
+
+export PATH="$PATH:/home/sgerbino/.local/bin"
