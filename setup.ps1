@@ -39,20 +39,10 @@ foreach ($pkg in $links.Keys) {
         }
     }
 
-    # Walk into the stow package to find the actual config directory
-    # Stow packages mirror the home directory structure
-    $configDir = $null
-    $candidates = Get-ChildItem -Path $src -Recurse -Directory | Sort-Object { $_.FullName.Length } -Descending
-    foreach ($dir in $candidates) {
-        $hasFiles = (Get-ChildItem -Path $dir.FullName -File).Count -gt 0
-        if ($hasFiles) {
-            $configDir = $dir.FullName
-            break
-        }
-    }
-
-    if (-not $configDir) {
-        # Fallback: use the package root itself
+    # Stow packages mirror the home directory structure (e.g. nvim/.config/nvim/).
+    # The junction target is the innermost directory matching the package name.
+    $configDir = Join-Path $src ".config" $pkg
+    if (-not (Test-Path $configDir)) {
         $configDir = $src
     }
 
