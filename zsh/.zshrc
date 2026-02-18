@@ -1,6 +1,8 @@
-export GPG_TTY=$(tty)
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpg-connect-agent updatestartuptty /bye > /dev/null
+if command -v gpgconf > /dev/null 2>&1; then
+    export GPG_TTY=$(tty)
+    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+    gpg-connect-agent updatestartuptty /bye > /dev/null
+fi
 
 function smartcard() {
     local retval=0
@@ -69,8 +71,10 @@ source ~/.config/fzf/fzf.zsh
 export EDITOR=nvim
 export CC=clang
 export CXX=clang++
-export CMAKE_CXX_COMPILER_LAUNCHER=ccache
-export CMAKE_C_COMPILER_LAUNCHER=ccache
+if command -v ccache > /dev/null 2>&1; then
+    export CMAKE_CXX_COMPILER_LAUNCHER=ccache
+    export CMAKE_C_COMPILER_LAUNCHER=ccache
+fi
 export CMAKE_EXPORT_COMPILE_COMMANDS=1
 export CLICOLOR_FORCE=1
 
@@ -81,4 +85,4 @@ export ENABLE_LSP_TOOL=1
 #    fastfetch --logo-type chafa
 #fi
 
-export PATH="$PATH:/home/sgerbino/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
