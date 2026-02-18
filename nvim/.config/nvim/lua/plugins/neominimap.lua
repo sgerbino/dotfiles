@@ -6,7 +6,7 @@ return {
   -- Optional
   keys = {
     -- Global Minimap Controls
-    { '<leader>nm', '<cmd>Neominimap toggle<cr>', desc = 'Toggle global minimap' },
+    { '<leader>nm', '<cmd>Neominimap Toggle<cr>', desc = 'Toggle global minimap' },
     { '<leader>no', '<cmd>Neominimap on<cr>', desc = 'Enable global minimap' },
     { '<leader>nc', '<cmd>Neominimap off<cr>', desc = 'Disable global minimap' },
     { '<leader>nr', '<cmd>Neominimap refresh<cr>', desc = 'Refresh global minimap' },
