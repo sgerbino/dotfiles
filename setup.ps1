@@ -41,7 +41,7 @@ foreach ($pkg in $links.Keys) {
 
     # Stow packages mirror the home directory structure (e.g. nvim/.config/nvim/).
     # The junction target is the innermost directory matching the package name.
-    $configDir = Join-Path $src ".config" $pkg
+    $configDir = Join-Path (Join-Path $src ".config") $pkg
     if (-not (Test-Path $configDir)) {
         $configDir = $src
     }
