@@ -1,7 +1,9 @@
 return {
   "coder/claudecode.nvim",
   dependencies = { "folke/snacks.nvim" },
-  config = true,
+  opts = {
+    terminal_cmd = vim.fn.has('win32') == 1 and (vim.fn.expand('$HOME') .. '\\.local\\bin\\claude.exe') or nil,
+  },
   keys = {
     { "<leader>a", nil, desc = "AI/Claude Code" },
     { "<leader>ac", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
