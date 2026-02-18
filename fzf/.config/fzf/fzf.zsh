@@ -1,5 +1,4 @@
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+source <(fzf --zsh)
 
 export FZF_DEFAULT_OPTS=" \
 --ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}' \
