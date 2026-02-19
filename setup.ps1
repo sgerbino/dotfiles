@@ -10,7 +10,6 @@ $links = @{
     'git'      = "$HOME\.config\git"
     'bat'      = "$env:APPDATA\bat"
     'lazygit'  = "$env:LOCALAPPDATA\lazygit"
-    'starship' = "$HOME\.config\starship"
 }
 
 $stowDir = $PSScriptRoot

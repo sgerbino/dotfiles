@@ -7,7 +7,7 @@ add_newline = true
 format = """
 [](surface0)\
 $os\
-$username\
+${env_var.USER}\
 [](bg:peach fg:surface0)\
 $directory\
 [](fg:peach bg:green)\
@@ -86,11 +86,8 @@ Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
 
-[username]
-show_always = true
-style_user = "bg:surface0 fg:text"
-style_root = "bg:surface0 fg:text"
-format = '[ $user ]($style)'
+[env_var.USER]
+format = '[ $env_value ](bg:surface0 fg:text)'
 
 [directory]
 style = "fg:mantle bg:peach"
