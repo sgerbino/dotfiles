@@ -13,22 +13,28 @@
 
 #workspaces button {
   color: @overlay2;
-  background: @surface0;
+  background: alpha(@surface0, 0.45);
   border-radius: 0px;
   margin: 10px 0px 5px 0px;
-  padding-right: 15px;
+  min-width: 30px;
+  padding: 0px 4px;
 }
 
 #workspaces button:first-child {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-  padding-left: 20px;
+  padding-left: 14px;
 }
 
 #workspaces button:last-child {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  padding-right: 25px;
+  padding-right: 14px;
+}
+
+#workspaces button label {
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 #workspaces button.active {
@@ -56,6 +62,7 @@
 #backlight,
 #network,
 #pulseaudio,
+#custom-caffeine,
 #custom-dunst,
 #custom-powermenu{
   padding: 0px 20px;
@@ -69,54 +76,59 @@
   border-bottom-left-radius: 20px;
   padding: 0px 25px 0px 20px;
   margin: 10px 0px 5px 20px;
-  background-color: @surface0;
+  background-color: alpha(@surface0, 0.45);
   color: @text;
 }
 
 #cpu {
-  background-color: @surface0;
+  background-color: alpha(@surface0, 0.45);
   color: @lavender;
 }
 
 #memory {
-  background-color: @surface0;
+  background-color: alpha(@surface0, 0.45);
   color: @blue;
 }
 
 #temperature {
   color: @sapphire;
-  background-color: @surface0;
+  background-color: alpha(@surface0, 0.45);
 }
 
 #backlight {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   color: @sky;
-  background-color: @surface0;
+  background-color: alpha(@surface0, 0.45);
 }
 
 #pulseaudio {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   padding: 0px 20px 0px 25px;
-  background-color: @surface0;
+  background-color: alpha(@surface0, 0.45);
   color: @teal;
 }
 
 #network {
   padding: 0px 20px 0px 25px;
-  background-color: @surface0;
+  background-color: alpha(@surface0, 0.45);
   color: @green;
 }
 
 #battery {
   color: @yellow;
-  background-color: @surface0;
+  background-color: alpha(@surface0, 0.45);
 }
 
 #clock {
   color: @peach;
-  background-color: @surface0;
+  background-color: alpha(@surface0, 0.45);
+}
+
+#custom-caffeine {
+  background-color: alpha(@surface0, 0.45);
+  color: @flamingo;
 }
 
 #custom-powermenu {
@@ -125,7 +137,7 @@
   padding: 0px 25px 0px 20px;
   margin: 10px 20px 5px 0px;
   color: @maroon;
-  background-color: @surface0;
+  background-color: alpha(@surface0, 0.45);
 }
 
 #battery.critical:not(.charging) {

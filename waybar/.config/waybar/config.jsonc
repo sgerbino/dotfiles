@@ -5,16 +5,13 @@
     "output": "eDP-1",
     "modules-left": ["custom/launcher", "cpu", "memory", "temperature", "backlight"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["pulseaudio", "network", "battery", "clock", "custom/powermenu"],
+    "modules-right": ["pulseaudio", "network", "battery", "clock", "custom/caffeine", "custom/powermenu"],
 
     "hyprland/workspaces": {
-        "format": "{icon}",
+        "format": "{name}",
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1",
-        "format-icons": {
-            "default": "",
-        },
-       "sort-by-number": true
+        "sort-by-number": true
     },
 
     "custom/launcher": {
@@ -100,6 +97,14 @@
     "clock": {
         "format-alt": "<span> </span>   {:%a %b %d}",
         "format": "<span> </span>   {:%I:%M %p}",
+        "tooltip": false
+    },
+
+    "custom/caffeine": {
+        "exec": "pgrep -x hypridle >/dev/null && echo '󰅶' || echo '󰛊'",
+        "on-click": "if pgrep -x hypridle >/dev/null; then killall hypridle; else hypridle & disown; fi; pkill -RTMIN+8 waybar",
+        "interval": 2,
+        "signal": 8,
         "tooltip": false
     },
 
