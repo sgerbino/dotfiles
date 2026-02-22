@@ -112,6 +112,15 @@ Run commands on Dockerized ollama.
 docker exec -it ollama ollama help
 ```
 
+## WireGuard VPN
+
+The waybar VPN module requires passwordless sudo for `wg-quick`, `wg`, and `find` on `/etc/wireguard`.
+
+Create `/etc/sudoers.d/wireguard`:
+```
+{USERNAME} ALL=(ALL) NOPASSWD: /usr/bin/wg-quick, /usr/bin/wg, /usr/bin/find /etc/wireguard *
+```
+
 ## Arch Linux
 
 ### Secure boot

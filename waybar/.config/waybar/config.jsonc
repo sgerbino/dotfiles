@@ -5,7 +5,7 @@
     "output": "eDP-1",
     "modules-left": ["custom/launcher", "cpu", "memory", "temperature", "backlight"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["pulseaudio", "network", "battery", "clock", "custom/caffeine", "custom/powermenu"],
+    "modules-right": ["pulseaudio", "network", "battery", "clock", "custom/vpn", "custom/caffeine", "custom/powermenu"],
 
     "hyprland/workspaces": {
         "format": "{name}",
@@ -17,7 +17,7 @@
     "custom/launcher": {
         "interval": "once",
         "format": "",
-        "on-click": "wofi --show drun --columns 2 -I -s ~/.config/wofi/style.css",
+        "on-click": "fuzzel",
         "tooltip": false
       },
 
@@ -101,11 +101,20 @@
     },
 
     "custom/caffeine": {
-        "exec": "pgrep -x hypridle >/dev/null && echo '󰅶' || echo '󰛊'",
+        "exec": "pgrep -x hypridle >/dev/null && echo '󰛊' || echo '󰅶'",
         "on-click": "if pgrep -x hypridle >/dev/null; then killall hypridle; else hypridle & disown; fi; pkill -RTMIN+8 waybar",
         "interval": 2,
         "signal": 8,
         "tooltip": false
+    },
+
+    "custom/vpn": {
+        "exec": "~/.config/waybar/scripts/vpn-status.sh",
+        "on-click": "~/.config/waybar/scripts/vpn-toggle.sh",
+        "return-type": "json",
+        "interval": 5,
+        "signal": 9,
+        "tooltip": true
     },
 
     "custom/powermenu": {

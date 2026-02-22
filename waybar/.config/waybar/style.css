@@ -63,6 +63,7 @@
 #network,
 #pulseaudio,
 #custom-caffeine,
+#custom-vpn,
 #custom-dunst,
 #custom-powermenu{
   padding: 0px 20px;
@@ -129,6 +130,11 @@
 #custom-caffeine {
   background-color: alpha(@surface0, 0.45);
   color: @flamingo;
+}
+
+#custom-vpn {
+  background-color: alpha(@surface0, 0.45);
+  color: @lavender;
 }
 
 #custom-powermenu {
