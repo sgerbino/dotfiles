@@ -1,0 +1,148 @@
+# Starship config for Linux TTY (no Nerd Font glyphs)
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+format = """
+$os\
+$env_var\
+$directory\
+$git_branch\
+$git_status\
+$c\
+$cmake\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+$docker_context\
+$time\
+$line_break$character"""
+
+[os]
+disabled = false
+style = "bold"
+format = "[$symbol]($style) "
+
+[os.symbols]
+Windows = "Win"
+Ubuntu = "Ubu"
+SUSE = "SUSE"
+Raspbian = "RPi"
+Mint = "Mint"
+Macos = "Mac"
+Manjaro = "Mnj"
+Linux = "Lnx"
+Gentoo = "Gen"
+Fedora = "Fed"
+Alpine = "Alp"
+Amazon = "Amz"
+Android = "And"
+Arch = "Arch"
+Artix = "Artix"
+CentOS = "CentOS"
+Debian = "Deb"
+Redhat = "RHEL"
+RedHatEnterprise = "RHEL"
+
+[env_var.USER]
+format = '[$env_value](bold) '
+
+[directory]
+style = "bold cyan"
+format = "[$path]($style) "
+truncation_length = 3
+truncation_symbol = ".../"
+
+[directory.substitutions]
+"Documents" = "doc"
+"Downloads" = "dl"
+"Music" = "music"
+"Pictures" = "pic"
+"Developer" = "dev"
+
+[git_branch]
+symbol = ""
+style = "bold green"
+format = '[$symbol$branch]($style) '
+
+[git_status]
+style = "bold green"
+format = '[$all_status$ahead_behind]($style) '
+
+[nodejs]
+symbol = "node"
+style = "bold teal"
+format = '[$symbol $version]($style) '
+
+[cmake]
+symbol = "cmake"
+style = "bold teal"
+format = '[$symbol $version]($style) '
+
+[c]
+symbol = "C"
+style = "bold teal"
+format = '[$symbol $version]($style) '
+
+[rust]
+symbol = "rs"
+style = "bold teal"
+format = '[$symbol $version]($style) '
+
+[golang]
+symbol = "go"
+style = "bold teal"
+format = '[$symbol $version]($style) '
+
+[php]
+symbol = "php"
+style = "bold teal"
+format = '[$symbol $version]($style) '
+
+[java]
+symbol = "java"
+style = "bold teal"
+format = '[$symbol $version]($style) '
+
+[kotlin]
+symbol = "kt"
+style = "bold teal"
+format = '[$symbol $version]($style) '
+
+[haskell]
+symbol = "hs"
+style = "bold teal"
+format = '[$symbol $version]($style) '
+
+[python]
+symbol = "py"
+style = "bold teal"
+format = '[$symbol $version]($style) '
+
+[docker_context]
+symbol = "docker"
+style = "bold blue"
+format = '[$symbol $context]($style) '
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bold purple"
+format = '[$time]($style) '
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = '[>](bold green)'
+error_symbol = '[>](bold red)'
+vimcmd_symbol = '[<](bold green)'
+vimcmd_replace_one_symbol = '[<](bold purple)'
+vimcmd_replace_symbol = '[<](bold purple)'
+vimcmd_visual_symbol = '[<](bold lavender)'

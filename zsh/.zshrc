@@ -61,6 +61,10 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 
+# TTY can't render Nerd Font glyphs, use ASCII-safe config
+if [[ "$TERM" == "linux" ]]; then
+    export STARSHIP_CONFIG=~/.config/starship-tty.toml
+fi
 eval "$(starship init zsh)"
 
 source ~/.config/fzf/fzf.zsh
