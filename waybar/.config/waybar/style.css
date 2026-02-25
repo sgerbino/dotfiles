@@ -54,6 +54,7 @@
 }
 
 #custom-launcher,
+#tray,
 #clock,
 #battery,
 #cpu,
@@ -79,6 +80,12 @@
   margin: 10px 0px 5px 20px;
   background-color: alpha(@surface0, 0.45);
   color: @text;
+}
+
+#tray {
+  border-radius: 20px;
+  margin-left: 20px;
+  background-color: alpha(@surface0, 0.45);
 }
 
 #cpu {

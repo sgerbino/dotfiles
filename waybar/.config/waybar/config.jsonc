@@ -3,7 +3,7 @@
     "layer": "top",
     "position": "top",
     "output": "eDP-1",
-    "modules-left": ["custom/launcher", "cpu", "memory", "temperature", "backlight"],
+    "modules-left": ["custom/launcher", "cpu", "memory", "temperature", "backlight", "tray"],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["pulseaudio", "network", "battery", "clock", "custom/vpn", "custom/caffeine", "custom/powermenu"],
 
@@ -12,6 +12,11 @@
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1",
         "sort-by-number": true
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 12
     },
 
     "custom/launcher": {
